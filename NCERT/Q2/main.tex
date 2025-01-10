@@ -73,11 +73,22 @@ The intersection of two conics with parameters $V_i,u_i,f_i,\;i= 1,2$ is defined
 \begin{align}
 x^T\brak{V_1+\mu V_2}x+2\brak{u_1+\mu u_2}^T x + \brak{f_1+\mu f_2}\;=\;0
 \end{align}
-Solving this, the points of intersection are
+we can get $\mu$ by solving the below equation
 \begin{align}
-\myvec{0\\0}\;,\myvec{1\\1}
+    \mydet{\vec{V}_1 + \mu\vec{V}_2 & \vec{u}_1 + \mu\vec{u}_2 \\ (\vec{u}_1+ \mu\vec{u}_2)^\top & f_1 + \mu f_2} &= 0 \\
+    \mydet{1& 0 & \frac{-\mu}{2} \\0 & \mu & \frac{-1}{2}\\ \frac{-\mu}{2} & \frac{-1}{2} & 0}&=0\\
+    \frac{1}{4}=\frac{\mu^3}{4}\\
+    \mu&=1
 \end{align}
-
+now solving the equation  by placing the value of $\mu$
+\begin{align}
+    x^T\myvec{1 & 0 \\0 & 1}x+2\myvec{\frac{-1}{2} \\\frac{-1}{2}}^Tx=0\\
+    \brak{x^T\myvec{1 & 0 \\0 & 1}+2\myvec{\frac{-1}{2} \\\frac{-1}{2}}}x=0
+\end{align}
+The points of intersection are
+\begin{align}
+x=\myvec{0\\0}\text{ and }x=\myvec{1\\1}
+\end{align}
 The area of the region founded by two parabolas $y=x^2 \text{ and } y^2=x $ is
 \begin{align}
     &=\int_{0}^{1} \sqrt{x}dx-\int_{0}^{1}  x^2 dx\\
