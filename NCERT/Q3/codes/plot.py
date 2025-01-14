@@ -25,6 +25,16 @@ def compute_trajectory(x0, y0, h, n):
     # Convert results to NumPy arrays
     return np.array(x[:n+1]), np.array(y[:n+1])
 
+# Function to compute sim-2 using the given difference equation
+def compute_sim2(x_values, y0, h):
+    y_values = [y0]
+    for i in range(1, len(x_values)):
+        xn = x_values[i]
+        xn_1 = x_values[i - 1]
+        yn = y_values[-1] + (h / 2) * (np.arcsin(xn) + np.arcsin(xn_1))
+        y_values.append(yn)
+    return np.array(y_values)
+
 # Set parameters
 x0 = 0
 y0 = 1  
@@ -32,18 +42,22 @@ h = 0.01
 n = 100
 
 # Compute using C function
-x_values, results = compute_trajectory(x0, y0, h, n)
+x_values, sim1_results = compute_trajectory(x0, y0, h, n)
 
-# Theoretical function: y = ∫sin⁻¹(x) dx, which is x*sin⁻¹(x) + sqrt(1-x²)
-y_function = x_values * np.arcsin(x_values) + np.sqrt(1 - x_values**2)
+# Compute sim-2 using the difference equation
+sim2_results = compute_sim2(x_values, y0, h)
+
+# Theoretical function: y = x*sin⁻¹(x) + sqrt(1 - x²)
+y_theory = x_values * np.arcsin(x_values) + np.sqrt(1 - x_values**2)
 
 # Plot results
-plt.figure(figsize=(10, 6))
-plt.scatter(x_values, results, color='blue', s=1, label='sim')
-plt.plot(x_values, y_function, color='red', label='theory')
+plt.figure(figsize=(12, 8))
+plt.scatter(x_values, sim1_results, color='blue', s=10, label='sim-1')
+plt.plot(x_values, sim2_results, color='yellow', linewidth=5, label='sim-2')
+plt.plot(x_values, y_theory, color='red', label='theory')
 plt.xlabel('x')
 plt.ylabel('y')
 plt.legend()
-plt.grid(True)  
+plt.grid(True)
 plt.show()
 
