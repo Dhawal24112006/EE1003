@@ -56,8 +56,29 @@
 \textbf{Question:}
 
 Find the maximum value of the function $f\brak{x}=\sin x +\cos x$
+\\
 
-\solution
+\textbf{Theoretical Solution}\\
+For maxima $f^\prime\brak{x}=0$ and $f^{\prime\prime}\brak{x} \leq 0$
+\begin{align}
+    f^\prime\brak{x} &= \cos x -\sin x =0\\
+    sinx&=cosx
+\end{align}
+We get $x=\frac{\pi}{4}$ and $x=\frac{5\pi}{4}$\\
+Lets check $f^{\prime\prime}\brak{x} \leq 0$\\
+\begin{align}
+    f^{\prime\prime}\brak{x} &= -\sin x -\cos x 
+\end{align}
+For $x=\frac{\pi}{4}$\\
+\begin{align}
+    f^{\prime\prime}\brak{x} &= -\sqrt{2} \leq 0
+\end{align}
+We get,
+\begin{align}
+    x_{max} = \frac{\pi}{4}=0.785392&,\quad y_{max} =\sqrt{2}= 1.414214
+\end{align}
+
+\textbf{Computational Solution}
 \begin{align}
     f^\prime\brak{x_{n}} &= \cos x_n -\sin x_n
 \end{align}
