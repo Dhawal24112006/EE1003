@@ -1,0 +1,7 @@
+\beamer@sectionintoc {2}{Problem}{3}{0}{1}
+\beamer@sectionintoc {3}{Solution}{4}{0}{2}
+\beamer@subsectionintoc {3}{1}{Theoretical Solution}{4}{0}{2}
+\beamer@subsectionintoc {3}{2}{Euler Formula}{6}{0}{2}
+\beamer@subsectionintoc {3}{3}{Bilinear transfrom}{7}{0}{2}
+\beamer@subsectionintoc {3}{4}{PLot}{8}{0}{2}
+\beamer@sectionintoc {4}{Codes}{9}{0}{3}
