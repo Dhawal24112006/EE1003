@@ -127,11 +127,44 @@ The companion matrix is,
 \end{align}
 For the equation at hand, the companion matrix is,
 \begin{align}
-  \myvec{
+  A= \myvec{
     0 & 93.75\\
     1 & 8.75
   }
 \end{align}
+
+\textbf{QR-Algorithm}\\
+\begin{enumerate}
+\item Initialization \\
+Let $A_0 = A $, where $A$ is the given matrix.
+
+\item QR Decomposition \\
+For each iteration $ k = 0, 1, 2, \dots $:
+\begin{enumerate}
+    \item Compute the QR decomposition of \( A_k \), such that:
+    \begin{align}
+    A_k = Q_k R_k
+    \end{align}
+    where:
+    \begin{enumerate}
+        \item $Q_k $ is an orthogonal matrix ($ Q_k^\top Q_k = I $).
+        \item $ R_k $ is an upper triangular matrix.
+    \end{enumerate}
+    The decomposition ensures $ A_k = Q_k R_k $.
+
+    \item Form the next matrix \( A_{k+1} \) as:
+    \begin{align}
+    A_{k+1} = R_k Q_k
+    \end{align}
+\end{enumerate}
+
+\item Convergence\\
+Repeat Step 2 until $ A_k $ converges to an upper triangular matrix $ T $. The diagonal entries of $T$ are the eigenvalues of $A$.\\
+\item The eigenvalues of matrix will be the roots of the equation.
+
+
+\end{enumerate}
+
 Using the QR algorithm we can now solve for the eigenvalues and thus the solutions for the given equation.\\
 Eigenvalue $1: 15.000000 + -0.000000j$\\
 Eigenvalue $2: -6.250000 + 0.000000j$
