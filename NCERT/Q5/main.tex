@@ -85,7 +85,9 @@ We get $x=15$ and $x=-6.25$\\
 We can't take negative values so $x=15$ and $y=25$ is the solution.\\\\
 So, time taken by each tap $A,B$ to fill the tank is $15,25$ hours.\\
 
-\textbf{Computational Solution}
+\textbf{Computational Solution}\\
+\textbf{Newton's Method}
+
 We will use Newton's Method for solving equations.
 \begin{align}
 	x_{n+1} = x_n - \frac{f\brak{x_n}}{f^{\prime}\brak{x_n}} 
@@ -97,9 +99,43 @@ Where we define $f\brak{x}$ as,
 \end{align}
 Thus, the new update equation is, 
 \begin{align}
-	x_{n+1} = x_n - \frac{{4x_n}^2 - 35x_n - 375}{8x_n -35} 
+	x_{n+1} = x_n - \frac{4x^2 - 35x - 375}{8x -35} 
 \end{align}
-This is a quadratic equation, it can have 2 solutions. As at $x=0,f\brak{x} \leq 0$. So we will iterate it from $ \brak{-100,0} $ and $\brak{0,100}$. Take initial guess as $x_0 = 0$, we can see that $x_n$ converges at $x=15$ and $x=-6.25$.
+This is a quadratic equation, it can have 2 solutions. As at $x=0,f\brak{x} \leq 0$. So we will iterate it from $ \brak{-100,0} $ and $\brak{0,100}$. Take initial guess as $x_0 = 0$, we can see that $x_n$ converges at $x=15$ and $x=-6.25$.\\
+Root $1: -6.250000$\\
+Root $2: 15.000000$
+
+
+\textbf{Eigen Values}\\
+Companion matrix: A matrix is said to be the companion of a polynomial $f\brak{x}$ if 
+$det\brak{A - \lambda I} = 0 \implies f\brak{x} = 0$. 
+\\
+For,
+\begin{align}
+  f\brak{x} &= c_0 + c_1 x \cdots + x^n\\
+  f\brak{x} &=-93.75-8.75x+x^2
+\end{align}
+The companion matrix is,
+\begin{align}
+  \myvec{
+    0 & 0 & \cdots & 0 & -c_0\\
+    1 & 0 & \cdots & 0 & -c_1\\
+    0 & 1 & \cdots & 0 & -c_2\\
+    \vdots & \vdots & \ddots & \vdots & \vdots\\
+    0 & 0 & \cdots & 1 & -c_{n-1}\\
+  }
+\end{align}
+For the equation at hand, the companion matrix is,
+\begin{align}
+  \myvec{
+    0 & 93.75\\
+    1 & 8.75
+  }
+\end{align}
+Using the QR algorithm we can now solve for the eigenvalues and thus the solutions for the given equation.\\
+Eigenvalue $1: 15.000000 + -0.000000j$\\
+Eigenvalue $2: -6.250000 + 0.000000j$
+
 
 \begin{figure}[h]
     \centering
