@@ -22,7 +22,7 @@ p_a_c_hat = 1 - p_a_hat
 
 # Bar plot
 plt.figure(figsize=(8, 6))
-bars = ['P(A)', 'P(A^C)']
+bars = ['p($A$)', 'p($A^C$)']
 probs = [p_a_hat, p_a_c_hat]
 
 plt.bar(bars, probs, color=['blue', 'orange'], alpha=0.7, edgecolor='black')

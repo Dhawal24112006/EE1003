@@ -54,18 +54,21 @@
 \setlength{\intextsep}{10pt} % Space between text and floats
 
 \textbf{Question:}\\
-$P\brak{A}=0.42.$ Find $P\brak{A^c}$\\
+For an event A, $p\brak{A}=0.42.$ Find $p\brak{A^c}$.\\
 	
 	\textbf{Theoritical Solution:}
 	\begin{align}
-		P\brak{A^c}&=1-P\brak{A}\\
-        P\brak{A^c}&=0.58
+		p\brak{A^c}&=1-p\brak{A}\\
+        p\brak{A^c}&=0.58
 	\end{align}\\
 	\textbf{Computational Solution:}\\
-	Using Bernoulli Distribution.
-    \begin{align}
-        A\implies 1  &&  A^c \implies 0
-    \end{align}
+	The Bernoulli R.V is defined as,
+\begin{align}
+	X_i = \begin{cases}
+		0 & A^c\\	
+		1 & A	
+	\end{cases}
+\end{align}
 
     The PMF represents the probability of each outcome in the sample space $S$ . For this
 \begin{align*}
@@ -74,26 +77,25 @@ $P\brak{A}=0.42.$ Find $P\brak{A^c}$\\
 
 the PMF is given as:
 \begin{align}
-P(X = n) = 
-\begin{cases} 
-0.42 & n=1, \\ 
-0.58 & n=0, \\ 
-0 & n \notin S.
+p_X\brak{n} = \begin{cases}
+    1-0.42 & n = 0\\
+    0.42 & n = 1 \\ 
+    0 & n \notin S.
 \end{cases}
 \end{align}
 
 \subsection*{Simulation Process}
-Using random function $1000$ times obtain $0$ or $1$, where $P\brak{1}=0.42$ 
+Using random function $1000$ times obtain $0$ or $1$, where $p\brak{1}=0.42$ 
 \begin{align}
-    P\brak{A}=\frac{\text{Number of 1}}{1000}\\
-        P\brak{A^c}=\frac{\text{Number of 0}}{1000}
+    p\brak{A}=\frac{\text{Number of 1}}{1000}\\
+        p\brak{A^c}=\frac{\text{Number of 0}}{1000}
 \end{align}
 
 	\subsection*{Final Solution}
 	We get,
     \begin{align}
-        P\brak{A}=0.4238 \\
-        P\brak{A^c}=0.5762
+        p\brak{A}=0.4238 \\
+        p\brak{A^c}=0.5762
     \end{align}
 
 \begin{figure}[h]
