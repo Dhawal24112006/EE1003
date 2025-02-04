@@ -20,21 +20,22 @@ samples = [bernoulli.bernoulli_random(p_a) for _ in range(n_samples)]
 p_a_hat = sum(samples) / n_samples
 p_a_c_hat = 1 - p_a_hat
 
-# Bar plot
+# Stem plot
 plt.figure(figsize=(8, 6))
-bars = ['p($A$)', 'p($A^C$)']
-probs = [p_a_hat, p_a_c_hat]
+x = np.array([0, 1])  # 0 for P(A^C), 1 for P(A)
+y = np.array([p_a_c_hat, p_a_hat])
 
-plt.bar(bars, probs, color=['blue', 'orange'], alpha=0.7, edgecolor='black')
+plt.stem(x, y, linefmt='b-', markerfmt='bo', basefmt="k-", use_line_collection=True)
 
-# Add labels on top of the bars
-for i, v in enumerate(probs):
-    plt.text(i, v + 0.02, f'{v:.4f}', ha='center', fontsize=12, fontweight='bold')
-
-# Axis labels and title
+# Add labels
+plt.xticks(x, ['p($A^C$)', 'p($A$)'])
 plt.ylabel("Probability")
 plt.ylim(0, 1)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Add text annotations
+for i, v in zip(x, y):
+    plt.text(i, v + 0.02, f'{v:.4f}', ha='center', fontsize=12, fontweight='bold')
 
 # Show the plot
 plt.show()
