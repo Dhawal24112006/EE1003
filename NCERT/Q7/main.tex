@@ -54,18 +54,18 @@
 \setlength{\intextsep}{10pt} % Space between text and floats
 
 \textbf{Question:}\\
-For an event A, $p\brak{A}=0.42.$ Find $p\brak{A^c}$.\\
+For an event A, $p\brak{A}=0.42.$ Find $p\brak{A'}$.\\
 	
 	\textbf{Theoritical Solution:}
 	\begin{align}
-		p\brak{A^c}&=1-p\brak{A}\\
-        p\brak{A^c}&=0.58
+		p\brak{A'}&=1-p\brak{A}\\
+        p\brak{A'}&=0.58
 	\end{align}\\
 	\textbf{Computational Solution:}\\
 	The Bernoulli R.V is defined as,
 \begin{align}
 	X_i = \begin{cases}
-		0 & A^c\\	
+		0 & A'\\	
 		1 & A	
 	\end{cases}
 \end{align}
@@ -86,24 +86,24 @@ p_X\brak{n} = \begin{cases}
 
 \subsection*{Simulation Process}
 \begin{enumerate}
-    \item We will define a Bernoulli random variable that generates $1$ for $A$ and $0$ for $A^c$.
-    \item $p\brak{1}=p\brak{A}=0.42$ and $p\brak{0}=p\brak{A^c}=0.58$ 
+    \item We will define a Bernoulli random variable that generates $1$ for $A$ and $0$ for $A'$.
+    \item $P\brak{1}=P\brak{A}=0.42$ and $P\brak{0}=P\brak{A'}=0.58$ 
     \item It will generate 1000 values.
-    \item Then will find $p\brak{A}$ and $p\brak{A^c}$
+    \item Then will find $P\brak{A}$ and $P\brak{A'}$
     \item At last we will show stem plot.
 \end{enumerate}
 
 Using random function $1000$ times obtain $0$ or $1$, where $p\brak{1}=0.42$ 
 \begin{align}
     p\brak{A}=\frac{\text{Number of 1}}{1000}\\
-        p\brak{A^c}=\frac{\text{Number of 0}}{1000}
+        p\brak{A'}=\frac{\text{Number of 0}}{1000}
 \end{align}
 
 	\subsection*{Final Solution}
 	We get,
     \begin{align}
         p\brak{A}=0.4238 \\
-        p\brak{A^c}=0.5762
+        p\brak{A'}=0.5762
     \end{align}
 
 \begin{figure}[h]

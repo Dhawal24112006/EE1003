@@ -28,7 +28,7 @@ y = np.array([p_a_c_hat, p_a_hat])
 plt.stem(x, y, linefmt='b-', markerfmt='bo', basefmt="k-", use_line_collection=True)
 
 # Add labels
-plt.xticks(x, ['p($A^C$)', 'p($A$)'])
+plt.xticks(x, ['p($A\'$)', 'p($A$)'])
 plt.ylabel("Probability")
 plt.ylim(0, 1)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
