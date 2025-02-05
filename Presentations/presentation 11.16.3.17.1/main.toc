@@ -1,0 +1,8 @@
+\beamer@sectionintoc {2}{Problem}{3}{0}{1}
+\beamer@sectionintoc {3}{Solution}{4}{0}{2}
+\beamer@subsectionintoc {3}{1}{Theoretical Solution}{4}{0}{2}
+\beamer@subsectionintoc {3}{2}{Solution using Bernoulli R.V}{5}{0}{2}
+\beamer@subsectionintoc {3}{3}{Simulation Process}{6}{0}{2}
+\beamer@subsectionintoc {3}{4}{Final Solution}{7}{0}{2}
+\beamer@sectionintoc {4}{PLot}{8}{0}{3}
+\beamer@sectionintoc {5}{Codes}{9}{0}{4}
